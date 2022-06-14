@@ -4,7 +4,7 @@ function get_distance ($x, $y){
 	$requete = "SELECT distance.C1, distance.C2, distance.C3
 			FROM position 
 			LEFT JOIN distance ON distance.id_position = position.id
-			WHERE position.x = '$x' AND position.y = '$y';";
+			WHERE position.x = $x AND position.y = $y;";
 	$resultat = mysqli_query($id_bd, $requete)
 		or die("Execution de la requete impossible : $requete");
 	$ligne = mysqli_fetch_array($resultat);
@@ -14,9 +14,7 @@ function get_distance ($x, $y){
 
 function get_intensity ($d){
 	include ("mysql.php");
-	$requete = "SELECT amplitude.intensite
-				FROM amplitude
-				WHERE amplitude.distance = '$d';";
+	$requete = "SELECT intensite FROM amplitude WHERE distance = $d;";
 	$resultat = mysqli_query($id_bd, $requete)
 		or die("Execution de la requete impossible : $requete");
 	$ligne=mysqli_fetch_assoc($resultat);
@@ -49,7 +47,6 @@ while (($x < 7.75) && ($y < 7.75)){
 	echo "$x, $y \n";
     $dis=get_distance($x, $y);
     for ($i = 0; $i <= 2; $i++){
-    	echo $dis[$i];
     	$intens=get_intensity($dis[$i]);
     	$bin=convert_binary($intens);
     	if ($i == 0) {
@@ -68,7 +65,7 @@ while (($x < 7.75) && ($y < 7.75)){
 
 
 
-/*$final=get_intensity(0.50);
+/*$final=get_intensity(9.99);
 echo "$final\n";*/
 
 /*$final2=get_distance(2.25, 5.25);
