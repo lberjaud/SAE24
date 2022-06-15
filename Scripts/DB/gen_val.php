@@ -19,9 +19,12 @@ $id = 1;
 			$d1 = round(sqrt((0.25 - $x)**2 + (0.25 - $y)**2), 2);
 			$d2 = round(sqrt((0.25 - $x)**2 + (7.75 - $y)**2), 2);
 			$d3 = round(sqrt((7.75 - $x)**2 + (7.75 - $y)**2), 2);
-			$i1 = round(division_zero(1.0006, $d1**2)*100, 2);
-			$i2 = round(division_zero(1.0006, $d2**2)*100, 2);
-			$i3 = round(division_zero(1.0006, $d3**2)*100, 2);
+			$i1 = division_zero(1.0006, $d1**2)*100;
+			$i1 = bcdiv($i1, 1, 2);
+			$i2 = division_zero(1.0006, $d2**2)*100;
+			$i2 = bcdiv($i2, 1, 2);
+			$i3 = division_zero(1.0006, $d3**2)*100;
+			$i2 = bcdiv($i3, 1, 2);
 			$requete = "INSERT INTO position (x, y) VALUES ('$x', '$y')";
 				mysqli_query($id_bd, $requete)
 					or die("Execution de la requete impossible : $requete");

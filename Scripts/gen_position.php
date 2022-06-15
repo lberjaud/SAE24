@@ -44,7 +44,6 @@ while (($x < 7.75) && ($y < 7.75)){
 	} else {
 		$y = $y + 0.5;
 	}
-	echo "$x, $y \n";
     $dis=get_distance($x, $y);
     for ($i = 0; $i <= 2; $i++){
     	$intens=get_intensity($dis[$i]);
@@ -59,21 +58,11 @@ while (($x < 7.75) && ($y < 7.75)){
     		$cap = "C3";
     	}
     	send_to_mqtt($bin, $cap);
+    	printf("FSK %d : %d \n", $i+1, $bin);
+
     }
+    printf("x : %f, y : %f\n",$x, $y);
+    printf("----------------------------------------------\n");
     sleep(5);
 }
-
-
-
-/*$final=get_intensity(9.99);
-echo "$final\n";*/
-
-/*$final2=get_distance(2.25, 5.25);
-echo $final2[2];*/
-
-/*$bin=convert_binary(400.24);
-echo "$bin\n";
-echo bindec($bin)/100;*/
-/*$cap="C1";
-send_to_mqtt(23, $cap);*/
 ?>
