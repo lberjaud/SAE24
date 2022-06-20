@@ -154,9 +154,7 @@ function exec_timeout($cmd, $timeout) {
   return $buffer;
 }
 
-$c1_c2 = array('C1', 'C2');
-$c1_c3 = array('C1', 'C3');
-$c2_c3 = array('C2', 'C3');
+
 
 while (true) {												/*Run this loop until the script is stopped*/
 	$str=exec_timeout("mosquitto_sub -t iut/# -v -C 3", 5);		/*Subscribe all the topics starting by 'iut' and output only three lines with the payload and topic*/
@@ -172,23 +170,31 @@ while (true) {												/*Run this loop until the script is stopped*/
 		$tp_cap[$i][0]=explode($slash, $tp_cap[$i][0]);		/*Slice the array line that include the topic into an other array with three lines (iut, sae24, 'sensors name') using slash as separator */
 		$tp_cap[$i][1]=decode_binary($tp_cap[$i][1]);		/*Transform the binary intensity into decimal numnber into the array*/ 
 	}
-	print_r($tp_cap);
+	/*print_r($tp_cap);*/
 	$distances = array();
 	for ($i=0; $i < count($tp_cap); $i++) { 
 		/*array_push($distances, get_distance($tp_cap[$i][1]));*/
 		$distances[$tp_cap[$i][0][2]] = get_distance($tp_cap[$i][1]);
 	}
-	print_r($distances);
-	printf("array lenght : %d\n", count($distances));
-	print_r(array_keys($distances));
-	if (count($distances ) >= 1) {
-		if (count($distances ) == 3) {
+	/*print_r($distances);*/
+	/*printf("array lenght : %d\n", count($distances));
+	print_r(array_keys($distances));*/
+	if (count($distances) >= 1) {
+		if (count($distances) == 3) {
 			$coord=get_coordonate($distances);
 			print_r($coord);
 			insert_measure($coord);			
 		}
-		
+		elseif (count($distances) < 3) {
+			$coord=get_coordonate($distances);
+			for ($i=0; $i < count(array_keys($distances)); $i++) { 
+				printf("Capteurs actifs : %s\n", array_keys($distances)[$i]);
+			}	
+			for ($i=0; $i < count($coord); $i++) { 
+				printf("Coodornee possibles : x=%f, y=%f\n", $coord[$i]["x"], $coord[$i]["y"]);
+			}
+			/*print_r($coord);*/
 	}
 }
-
+}
 ?>
