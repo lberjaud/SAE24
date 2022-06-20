@@ -96,6 +96,8 @@ footer ul li:first-child
 	width: 800px;
 	height:400px;
 	border: 3px solid black;
+	align-items: center;
+	margin: 30px;
 }
 
 .button {
@@ -130,7 +132,7 @@ footer ul li:first-child
 
 ::-webkit-scrollbar {
 	width: 10px;
-	background-color: #whitesmoke;
+	background-color: whitesmoke;
         
 
 }

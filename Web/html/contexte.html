@@ -12,7 +12,7 @@
 <body>
 	<nav>
 			<div class="profile">
-			<img src="../images/logosae.png" alt="logo SAE24" />
+			<img src="../images/logosae.png" alt="logo SAE24" title="Logo SAE24" />
 				<h1>Localiser une source sonore dans un environnement intérieur</h1>
 			</div>
 			<ul> 
@@ -27,26 +27,25 @@
 
 		<p class="choix">Premièrement, la mise en place d’un Gantt afin de gérer les tâches à réaliser ainsi que de répartir la charge de travail.</p><br>
 
-
 		<p class="choix">Ensuite, nous avons créé une base de données à l’aide du logiciel MySQL. Elle contient 3 tables : 
 			<ul>
-			<li>la première sera pour avoir les coordonnées d’un point (soit x et y)</li>
-			<li>la deuxième sera liée à la première afin d’avoir la corrélation entre la position d’un point et la distance avec les 3 capteurs. Ces deux tables permettent de référencer nos valeurs. Pour finir,
-			<li>La dernière table permettra d’avoir la date de l’heure de chaque position afin de mettre en œuvre l’historique de toutes les positions.</p><br>
+			<li>La première sera pour avoir les coordonnées d’un point (soit x et y)</li>
+			<li>La deuxième sera liée à la première afin d’avoir la corrélation entre la position d’un point et la distance avec les 3 capteurs. Ces deux tables permettent de référencer nos valeurs. Pour finir,
+			<li>La dernière table permettra d’avoir la date de l’heure de chaque position afin de mettre en œuvre l’historique de toutes les positions.<br>
 			</ul>
 
-		<p class="choix">De plus, nous allons coder un script qui permet de générer une amplitude binaire provenant des trois capteurs de la salle. La création d’un serveur MQTT, nous permettra de recevoir nos valeurs binaires afin de les récupérer et les décoder à l’aide d’un script pour les transformer en amplitudes. Pour finir cette troisième étape, la formule d’amplitude du signal reçu qui est =k/d², nous permettra d’avoir la distance d’un point.</p> <br>
+		<p class="choix">De plus, nous avons codé un script qui permet de générer une amplitude binaire provenant des trois capteurs de la salle. La création d’un serveur MQTT nous permet de recevoir nos valeurs binaires afin de les récupérer et les décoder à l’aide d’un script pour les transformer en amplitudes. Pour finir cette troisième étape, la formule d’amplitude du signal reçu qui est k/d²; elle nous permet d’avoir la distance d’un point.</p> <br>
 
 
 		<p class="choix">Donc les 4 scripts qui seront réalisés à l’aide du langage PHP sont : </p>
 			<ul>
-				<li>génération des valeurs binaires</li>
-			<li>décodage binaires</li>
-			<li>distance de 3 capteurs</li>
-			<li>graphique PHP</li>
+			<li>Génération des valeurs binaires</li>
+			<li>Décodage binaire</li>
+			<li>Distance de 3 capteurs</li>
+			<li>Graphique PHP</li>
 			</ul>
 
-		<p class="choix">Le site web sera composé de 4 pages :</p>
+		<p class="choix">Le site web est composé de 4 pages :</p>
 			<ul>
 				<li>Présentation</li>
 				<li>Contexte</li>
@@ -55,9 +54,11 @@
 			</ul>
 
 
-<p class="choix">La structure du site, c'est-à-dire les pages statiques seront effectuées grâce aux langages HTML5 ainsi que CSS3. </p>
+<p class="choix">La structure du site, c'est-à-dire les pages statiques sont écrites en HTML5 et en CSS3. </p>
+
+<p>Voici la répartition du travail sur notre diagramme de GANTT:</p>
 
 			
-		<a href="../images/gantt.pdf"><img class="gantt" src="../images/gantt.png" alt="Notre Gantt">  </a>
+		<a href="../images/gantt.pdf"><img class="gantt" src="../images/gantt.png" alt="Notre Gantt" title="Cliquez pour afficher.">  </a>
 	</body>
 	

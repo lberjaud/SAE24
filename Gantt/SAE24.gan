@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="SAE 24" company="" webLink="http://" view-date="2022-05-26" view-index="0" gantt-divider-location="300" resource-divider-location="300" version="3.1.3100" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="SAE 24" company="" webLink="http://" view-date="2022-05-27" view-index="0" gantt-divider-location="297" resource-divider-location="300" version="3.2.3243" locale="fr_FR">
     <description>
         <![CDATA[Ce projet vise de permettre à une personne de retrouver un objet dans une salle en émettant un son. Notre groupe est composé de 6 personnes et sera présenter en semaine 25.]]>
     </description>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="167" order="0"/>
+        <field id="tpd3" name="Nom" width="166" order="0"/>
         <field id="tpd4" name="Date de début" width="65" order="1"/>
-        <field id="tpd5" name="Date de fin" width="64" order="2"/>
+        <field id="tpd5" name="Date de fin" width="65" order="2"/>
         <option id="taskLabelUp" value="name"/>
-        <option id="taskLabelDown" value=""/>
         <option id="taskLabelLeft" value="taskDates"/>
-        <option id="taskLabelRight" value=""/>
+        <option id="taskLabelRight" value="resources"/>
+        <option id="filter.completedTasks" value="false"/>
         <option id="color.recent">
             <![CDATA[#33ccff #66ccff #006666 #ff0033 #009999 #ff6666 #ffffff #ffcccc #9933ff #ffff00]]>
         </option>
@@ -62,8 +62,14 @@
             <task id="9" name="Préparation pour l'oral" color="#33ccff" meeting="false" start="2022-06-20" duration="5" complete="0" thirdDate="2022-06-20" thirdDate-constraint="1" expand="true"/>
         </task>
     </tasks>
-    <resources/>
-    <allocations/>
+    <resources>
+        <resource id="0" name="Mattieu" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Lucas" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="8" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+    </allocations>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
