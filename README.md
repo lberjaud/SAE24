@@ -8,19 +8,25 @@
 
 ## Workflow
 
+![Workflow](https://github.com/lberjaud/SAE24/blob/main/Diagram/Workflow%20SAE24.drawio.png)
+
 ## Install with docker-compose
 Follow this guide if you don't have docker-compose installed : https://docs.docker.com/compose/install/
 
 ```sh
-git clone https://github.com/TheToto318/IoT_stack.git
+git clone https://github.com/lberjaud/SAE24.git
 cd FSK_Finder
 docker-compose up -d
 ```
 
 
 ## Author
-
+👤 **Roques Clément**
 👤 **Thomas Roux**
+👤 **Mattieu Naissant**
+👤 **Sabri Zakaria**
+👤 **Milscent Eliot**
+👤 **Berjaud Lucas**
 
 
 ## Show your support
