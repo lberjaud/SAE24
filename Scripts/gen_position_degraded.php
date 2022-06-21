@@ -45,7 +45,7 @@ while (($x < 7.75) && ($y < 7.75)){				/*Run this loop until the generated coord
 		$y = $y + 0.5;
 	}
     $dis=get_distance($x, $y);					/*Get sensors distances for the generated coordonates*/
-    for ($i = 1; $i <= 2; $i++){				/*Run the loop for the three distances*/
+    for ($i = 1; $i <= 1; $i++){				/*Run the loop for the three distances*/
     	$intens=get_intensity($dis[$i]);		/*Get the intensity of the 'i' distance */
     	$bin=convert_binary($intens);			/*Convert it to binary*/
     	if ($i == 0) {
