@@ -29,7 +29,7 @@ docker-compose up -d
 
 👤 **Sabri Zakaria**
 
-👤 **Milscent Eliot**
+👤 **Milcent Eliot**
 
 👤 **Berjaud Lucas**
 
