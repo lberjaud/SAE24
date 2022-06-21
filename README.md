@@ -13,7 +13,7 @@ Follow this guide if you don't have docker-compose installed : https://docs.dock
 
 ```sh
 git clone https://github.com/TheToto318/IoT_stack.git
-cd IoT_stack
+cd FSK_Finder
 docker-compose up -d
 ```
 
