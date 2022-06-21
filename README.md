@@ -22,10 +22,15 @@ docker-compose up -d
 
 ## Author
 👤 **Roques Clément**
+
 👤 **Thomas Roux**
+
 👤 **Mattieu Naissant**
+
 👤 **Sabri Zakaria**
+
 👤 **Milscent Eliot**
+
 👤 **Berjaud Lucas**
 
 
