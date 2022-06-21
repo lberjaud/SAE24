@@ -4,6 +4,20 @@
 
 > Docker stack to find an object by sound (HTML/PHP based) 
 
+## Project details 
+
+## Workflow
+
+## Install with docker-compose
+Follow this guide if you don't have docker-compose installed : https://docs.docker.com/compose/install/
+
+```sh
+git clone https://github.com/TheToto318/IoT_stack.git
+cd IoT_stack
+docker-compose up -d
+```
+
+
 ## Author
 
 👤 **Thomas Roux**
