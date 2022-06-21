@@ -34,38 +34,9 @@ function send_to_mqtt ($payload, $capteur){
 	shell_exec("mosquitto_pub -h $broker -t $topic -m $payload");
 }
 
-while (true){
-	$x = 0.25;	/*Initial coordonate */
-	$y = 0.25;
-	$t1 = 0;
-	$t2 = 2;
-	while (($x < 7.75) && ($y < 7.75)){				/*Run this loop until the generated coordonates reach the end of the grid */
-		$random = shell_exec("shuf -i 0-1 -n 1");	
-		if ($random == 0) {
-			$x = $x + 0.5;							/*Move forward of one cell on the x axis one in two else move on the y axis. Take ramdomly the number 0 or 1 to make the choice*/
-		} else {
-			$y = $y + 0.5;
-		}
-	    $dis=get_distance($x, $y);					/*Get sensors distances for the generated coordonates*/
-	    for ($i = $t1; $i <= $t2; $i++){				/*Run the loop for the three distances*/
-	    	$intens=get_intensity($dis[$i]);		/*Get the intensity of the 'i' distance */
-	    	$bin=convert_binary($intens);			/*Convert it to binary*/
-	    	if ($i == 0) {
-	    		$cap = "C1";
-	    	}
-	    	elseif ($i == 1) {						/*Set the sensors name according to i*/
-	    		$cap = "C2";
-	    	}
-	    	else {
-	    		$cap = "C3";
-	    	}
-	    	send_to_mqtt($bin, $cap);			/*Send the payload to the MQTT broker with the sensor name */
-	    	printf("FSK %d : %d \n", $i+1, $bin); /*Logging*/ 
 
-	    }
-	    printf("x : %f, y : %f\n",$x, $y);
-	    printf("----------------------------------------------\n");
-	    include ("mysql.php");
+function get_sensor_mode () {
+		include ("mysql.php");
 		$requete = "SELECT mode.nbr_capteur FROM mode;";
 		$resultat = mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");	
@@ -77,7 +48,6 @@ while (true){
 	    		echo "Switching to one sensor mode\n";
 	    		echo "-------------------------------\n";	
 				if ($random == 0) {
-					echo "ok 1\n";
 					$t1 = 0;
 	    			$t2 = 0;							
 				} elseif ($random == 1) {
@@ -109,6 +79,40 @@ while (true){
 				$t1 = 0;
 				$t2 = 2;
 			}
+		$result=array("t1"=>$t1, "t2"=>$t2);
+		return $result;
+}
+
+while (true){
+	$x = 0.25;	/*Initial coordonate */
+	$y = 0.25;
+	while (($x < 7.75) && ($y < 7.75)){				/*Run this loop until the generated coordonates reach the end of the grid */
+		$random = shell_exec("shuf -i 0-1 -n 1");	
+		if ($random == 0) {
+			$x = $x + 0.5;							/*Move forward of one cell on the x axis one in two else move on the y axis. Take ramdomly the number 0 or 1 to make the choice*/
+		} else {
+			$y = $y + 0.5;
+		}
+	    $dis=get_distance($x, $y);
+	    $t1_t2=get_sensor_mode();	                                          /*Get sensors distances for the generated coordonates*/
+	    for ($i = $t1_t2["t1"]; $i <= $t1_t2["t2"]; $i++){				/*Run the loop for the three distances*/
+	    	$intens=get_intensity($dis[$i]);		/*Get the intensity of the 'i' distance */
+	    	$bin=convert_binary($intens);			/*Convert it to binary*/
+	    	if ($i == 0) {
+	    		$cap = "C1";
+	    	}
+	    	elseif ($i == 1) {						/*Set the sensors name according to i*/
+	    		$cap = "C2";
+	    	}
+	    	else {
+	    		$cap = "C3";
+	    	}
+	    	send_to_mqtt($bin, $cap);			/*Send the payload to the MQTT broker with the sensor name */
+	    	printf("FSK %d : %d \n", $i+1, $bin); /*Logging*/ 
+
+	    }
+	    printf("x : %f, y : %f\n",$x, $y);
+	    printf("----------------------------------------------\n");
 	sleep(10);
 
 }
