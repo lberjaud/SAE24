@@ -132,7 +132,8 @@ DROP TABLE IF EXISTS `mode`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mode` (
-  `nbr_capteur` int(11) NOT NULL
+  `nbr_capteur` int(11) NOT NULL,
+  PRIMARY KEY (`nbr_capteur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -180,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-21 14:23:07
+-- Dump completed on 2022-06-21 14:41:24

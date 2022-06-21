@@ -65,20 +65,14 @@ while (true){
 	    }
 	    printf("x : %f, y : %f\n",$x, $y);
 	    printf("----------------------------------------------\n");
-	    echo "Switch mode ? (5sec) 1 : One sensor, 2 : Two sensors, 3 : Three sensors\n";
-
-		// get file descriptor for stdin 
-		$fd = fopen('php://stdin', 'r');
-
-		// prepare arguments for stream_select()
-		$read = array($fd);
-		$write = $except = array(); // we don't care about this
-		$timeout = 5;
-
-		// wait for maximal 5 seconds for input
-		if(stream_select($read, $write, $except, $timeout)) {
-	    	$menuchoice=fgets($fd);
-	    	if($menuchoice == 1){
+	    include ("mysql.php");
+		$requete = "SELECT mode.nbr_capteur FROM mode;";
+		$resultat = mysqli_query($id_bd, $requete)
+			or die("Execution de la requete impossible : $requete");	
+		$ligne=mysqli_fetch_assoc($resultat);
+		extract($ligne);
+		mysqli_close($id_bd);
+		if($nbr_capteur == 1){
 	    		$random = shell_exec("shuf -i 0-2 -n 1");
 	    		echo "Switching to one sensor mode\n";
 	    		echo "-------------------------------\n";	
@@ -94,7 +88,7 @@ while (true){
 	    			$t2 = 2;	
 				}
 			}
-			elseif($menuchoice == 2){
+			elseif($nbr_capteur == 2){
 				$random = shell_exec("shuf -i 0-2 -n 1");
 				echo "Switching to two sensors mode\n";
 				echo "-------------------------------\n";	
@@ -109,22 +103,14 @@ while (true){
 	    			$t2 = 2;	
 				}
 			}
-			elseif($menuchoice == 3){
+			elseif($nbr_capteur == 3){
 				echo "Switching to three sensors mode\n";
 				echo "-------------------------------\n";
 				$t1 = 0;
 				$t2 = 2;
-			} 
-			else {
-				echo "Please input a number ! \n";
-				echo "------------------------\n";
 			}
-		}
-		else {
-	    	echo "Timeout\n";
-	    	echo "-----------------\n";
-			}
-		sleep(10);
-	}
+	sleep(10);
+
+}
 }
 ?>
