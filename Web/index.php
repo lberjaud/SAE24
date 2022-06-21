@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/style_dynamique.css">
 </head>
 <body>
 
