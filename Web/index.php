@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-	<title>Home</title>
-	<link rel="stylesheet" href="style/style_dynamique.css">
-</head>
-<body>
+		<meta charset="UTF-8" /> <!-- The charset attribute specifies the character encoding for the HTML document. -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- The browser viewport is the area of the window in which web content can be viewed. -->
+		<link rel="stylesheet" href="style/style.css" /> <!-- Allow to link the style page-->
+                <link rel="shortcut icon" type="image/png" href="../images/logosae.png"/> <!-- favicon= tab icon on browser-->
+                <title>Affichage</title> <!--Tab title-->
+	</head>
 
+	<body>
+	<nav> <!--Navigation bar-->
+			<div class="profile">
+			<h1>Localiser une source sonore dans un environnement intérieur</h1>
+			<img src="../images/logosae.png" alt="logo SAE24" title="Logo SAE24" />
+			</div>
+			<ul>
+				<li><a style="text-decoration:none" href="index.html" class="button">Accueil</a></li>
+				<li><a style="text-decoration:none" href="contexte.html" class="button">Contexte du projet</a></li>
+				<li><a style="text-decoration:none" href="mentions.html" class="button">Mentions légales</a></li>
+			</ul>
+		</nav>
+
+		<div>
 	<?php
 
 		include("mysql.php");
@@ -62,9 +79,24 @@
 			{
 				for($j = 0; $j < 18; $j++)
 				{
+					if ($tab[$i][$j] == 5 ){
+						$tab[$i][$j] = "<img class=point1 src=image/red1.png>";
+					}
+					elseif ($tab[$i][$j] == 4 ){
+						$tab[$i][$j] = "<img class='point2' src=image/red1.png>";
+					}
+					elseif ($tab[$i][$j] == 3 ){
+						$tab[$i][$j] = "<img class='point3' src=image/red1.png>";
+					}
+					elseif ($tab[$i][$j] == 2 ){
+						$tab[$i][$j] = "<img class='point4' src=image/red1.png>";
+					}
+					elseif ($tab[$i][$j] == 1 ){
+						$tab[$i][$j] = "<img class='point5' src=image/red1.png>";
+					}
 					echo($tab[$i][$j]);
 				}
-			echo("<br />");
+				echo("<br />");
 			}
 
 			echo($hb . "</div>");
@@ -147,28 +179,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
