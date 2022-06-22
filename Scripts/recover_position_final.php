@@ -114,7 +114,7 @@ function get_coordonate ($distances){
 		$key0=$nbr_key[0];
 		$key1=$nbr_key[1];
 		$d1=$distances[$key0];
-		$d2=$distances[$key1];
+		$d2=$distances[$key1];																																				/*Get coordonates with a array in input which include parsed distances or sensors, it could be 1, 2 or 3 distances.*/
 		$requete = "SELECT position.*, distance.C1, distance.C2, distance.C3 FROM position 
 		LEFT JOIN distance ON distance.id_position = position.id
 		WHERE distance.$key0 = $d1 AND distance.$key1 = $d2";
@@ -159,7 +159,7 @@ function insert_err_cap ($err, $position){
 	date_default_timezone_set('Europe/Paris');
 	$date = date("Y-m-d");
 	$time = date("H:i:s");
-	$requete = "INSERT INTO journaux (date, heure, message, position) VALUES ('$date', '$time', '$err', '$position');";
+	$requete = "INSERT INTO journaux (date, heure, message, position) VALUES ('$date', '$time', '$err', '$position');";            /* Insert log and potential position in the "journaux" table */
 		mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");
 }
