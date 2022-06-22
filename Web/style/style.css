@@ -147,3 +147,44 @@ footer ul li:first-child
 .choix {
 	text-align: justify;
 }
+	
+table {
+	
+		border-collapse: collapse;
+		max-width: 500px;
+	
+	}
+	
+table, th, td {
+	
+		border : 1px solid black;
+	
+	}
+	
+.contenu {
+		font-family : 'Courier New', monospace;
+		font-size : 20px;
+		margin-top : 30px;
+		display : flex;
+		flex-direction : row;
+		justify-content : space-around;
+		flex-wrap : wrap;
+}
+.point2 {
+	opacity: 0.8;
+}
+.point3 {
+	opacity: 0.6;
+}
+.point4 {
+	opacity: 0.4;
+}
+.point5 {
+	opacity: 0.2;
+}
+img {
+	margin: -2px;
+	margin-right: 6px;
+
+}
+
