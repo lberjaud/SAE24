@@ -2,7 +2,7 @@
 <p>
 </p>
 
-> Docker stack to find an object by sound (HTML/PHP based) 
+> Docker stack to find an object by sound (HTML/PHP based). 
 
 ## Project details 
 
@@ -13,7 +13,7 @@
 ## Install with docker-compose
 Follow this guide if you don't have docker-compose installed : https://docs.docker.com/compose/install/
 
-Two architecture are supported : x86_x64 and armv8-64
+Two architecture are supported : x86_x64 and armv8-64.
 
 Please choose the appropriate image.
 
