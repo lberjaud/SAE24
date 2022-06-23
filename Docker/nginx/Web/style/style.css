@@ -1,0 +1,190 @@
+body 
+{
+	font-family: Roboto, sans-serif; /*police d'écriture*/
+	padding: 0 0;
+	margin: 0px;
+	background-image: url( "" );
+	background-size: cover;
+	font-size: larger;
+	padding-bottom: 50px;
+}
+
+h1 {
+	display: flex;
+	margin: 20px;
+}
+
+.eohost, .mail {
+	margin: 40px;
+}
+
+p,h2 {
+	margin: 15px;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	font-size: 7px;
+	background-color: #000000;
+   color: black;
+}
+
+nav .profile {
+	display: flex;
+	align-items: center;
+}
+
+nav .profile img { 
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	margin: 10px;
+}
+
+nav .profile h1 {
+
+	margin-right: 60px;
+	font-size: 20px;
+	color: white;
+}
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+        
+	
+}
+nav ul li {
+	margin-left: 20px;
+  margin-right: 20px;
+	cursor: pointer;
+  color: white;
+    
+	
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  clear: both;
+  width: 100%;
+  padding-bottom: 15px;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+}
+
+footer ul li
+{
+  float: left;
+  width:33%;
+  list-style-type: none;
+  
+}
+
+footer ul li:first-child
+{
+  text-align: left;
+}
+
+.gantt {
+	width: 800px;
+	height:400px;
+	border: 3px solid black;
+	align-items: center;
+	margin: 30px;
+}
+
+.button {
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	background-color:#c62d1f;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #810e05;
+	position: relative;
+
+}
+.button:hover {
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	background-color:#f24437;
+	box-shadow: 1px 2px 0px -5px #8a2a21;
+	top: 2px;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+/* Scrollbar customization */
+
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: whitesmoke;
+        
+
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #000000;
+	box-shadow: 0-100vh 0 100vh #000000;
+       
+}
+
+.choix {
+	text-align: justify;
+}
+	
+table {
+	
+		border-collapse: collapse;
+		max-width: 500px;
+	
+	}
+	
+table, th, td {
+	
+		border : 1px solid black;
+	
+	}
+	
+.contenu {
+		font-family : 'Courier New', monospace;
+		font-size : 20px;
+		margin-top : 30px;
+		display : flex;
+		flex-direction : row;
+		justify-content : space-around;
+		flex-wrap : wrap;
+}
+.point2 {
+	opacity: 0.8;
+}
+.point3 {
+	opacity: 0.6;
+}
+.point4 {
+	opacity: 0.4;
+}
+.point5 {
+	opacity: 0.2;
+}
+img {
+	margin: -2px;
+	margin-right: 6px;
+
+}
+

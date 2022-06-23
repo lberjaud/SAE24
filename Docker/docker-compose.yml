@@ -27,3 +27,10 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=db
       # - PMA_ABSOLUTE_URI=https://<your_domain>/phpmyadmin/
+
+  nginx:
+    image: nginx_sae24
+    restart: always
+    container_name: 'nginx_sae24'
+    ports:
+      - 4443:8080
