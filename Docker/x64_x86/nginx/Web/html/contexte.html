@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" /> <!-- The charset attribute specifies the character encoding for the HTML document. -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- The browser viewport is the area of the window in which web content can be viewed. -->
+		<link rel="stylesheet" href="../style/style.css" /> <!-- Allow to link the style page-->
+        <link rel="shortcut icon" type="image/png" href="../image/logosae.png"/> <!-- favicon= tab icon on browser-->
+        <title>Contexte</title> <!--Tab title-->
+	</head>
+
+<body>
+	<nav> <!--Navigation bar-->
+			<div class="profile">
+			<img src="../image/logosae.png" alt="logo SAE24" title="Logo SAE24" />
+				<h1>Localiser une source sonore dans un environnement intérieur</h1>
+			</div>
+			<ul> 
+				<li><a style="text-decoration:none" href="../index.html" class="button">Accueil</a></li>
+				<li><a style="text-decoration:none" href="../affichage.php" class="button">Affichage</a></li>
+				<li><a style="text-decoration:none" href="mentions.html" class="button">Mentions légales</a></li>
+			</ul>
+		</nav>
+
+		<p class="choix">
+		Tout d’abord, pour cette SAE 24 intitulée <strong> Localiser une source sonore dans un environnement intérieur</strong>, notre équipe était formée de 6 élèves. Ce projet nous a été proposé par nos professeurs référents qui sont Mr. Brulin ainsi que Mr.Roux. Nous avions à disposition 52h30 pour la réalisation de ce projet. Le but de  ce projet était donc de permettre à une personne de retrouver un objet qui émet du son.</p> <br>
+
+		<p class="choix">Premièrement, la mise en place d’un Gantt afin de gérer les tâches à réaliser ainsi que de répartir la charge de travail.</p><br>
+
+		<p class="choix">Ensuite, nous avons créé une base de données à l’aide du logiciel MySQL. Elle contient 3 tables : 
+			<ul>
+			<li>La première sera pour avoir les coordonnées d’un point (soit x et y)</li>
+			<li>La deuxième sera liée à la première afin d’avoir la corrélation entre la position d’un point et la distance avec les 3 capteurs. Ces deux tables permettent de référencer nos valeurs. Pour finir,
+			<li>La dernière table permettra d’avoir la date de l’heure de chaque position afin de mettre en œuvre l’historique de toutes les positions.<br>
+			</ul>
+
+		<p class="choix">De plus, nous avons codé un script qui permet de générer une amplitude binaire provenant des trois capteurs de la salle. La création d’un serveur MQTT nous permet de recevoir nos valeurs binaires afin de les récupérer et les décoder à l’aide d’un script pour les transformer en amplitudes. Pour finir cette troisième étape, la formule d’amplitude du signal reçu qui est k/d²; elle nous permet d’avoir la distance d’un point.</p> <br>
+
+
+		<p class="choix">Donc les 4 scripts qui seront réalisés à l’aide du langage PHP sont : </p>
+			<ul>
+			<li>Génération des valeurs binaires</li>
+			<li>Décodage binaire</li>
+			<li>Distance de 3 capteurs</li>
+			<li>Graphique PHP</li>
+			</ul>
+
+		<p class="choix">Le site web est composé de 4 pages :</p>
+			<ul>
+				<li>Présentation</li>
+				<li>Contexte</li>
+				<li>Affichage Dynamique</li>
+				<li>Mentions légales</li>
+			</ul>
+
+
+<p class="choix">La structure du site, c'est-à-dire les pages statiques sont écrites en HTML5 et en CSS3. </p>
+
+<p>Voici la répartition du travail sur notre diagramme de GANTT:</p>
+
+			
+		<a href="../image/gantt.pdf"><img class="gantt" src="../image/gantt.png" alt="Notre Gantt" title="Cliquez pour ouvrir le PDF.">  </a>
+	</body>
+	
+</html>

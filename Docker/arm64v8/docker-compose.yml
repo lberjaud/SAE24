@@ -1,0 +1,36 @@
+volumes:
+  db_data:
+
+services:  
+  db:
+    image: totorx/sae24:mariadb_arm64
+    restart: always
+    container_name: 'db_sae24'
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: 'yes'
+      MARIADB_USER: 'sae24'
+      MARIADB_PASSWORD: 'sae24pass'
+      MARIADB_DATABASE: 'sae24'
+    volumes:
+      - db_data:/var/lib/mysql
+  mqtt:
+    image: totorx/sae24:mosquitto_arm64
+    container_name: 'mosquito_broker_sae24'
+    restart: always
+  
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 1104:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      # - PMA_ABSOLUTE_URI=https://<your_domain>/phpmyadmin/
+
+  nginx:
+    image: totorx/sae24:nginx_arm64
+    restart: always
+    container_name: 'nginx_sae24'
+    ports:
+      - 4443:8080
