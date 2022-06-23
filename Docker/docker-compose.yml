@@ -3,7 +3,7 @@ volumes:
 
 services:  
   db:
-    image: mariadb_sae24
+    image: totorx/sae24:mariadb
     restart: always
     container_name: 'db_sae24'
     environment:
@@ -14,7 +14,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
   mqtt:
-    image: mosquitto_sae24
+    image: totorx/sae24:mosquitto
     container_name: 'mosquito_broker_sae24'
     restart: always
   
@@ -29,7 +29,7 @@ services:
       # - PMA_ABSOLUTE_URI=https://<your_domain>/phpmyadmin/
 
   nginx:
-    image: nginx_sae24
+    image: totorx/sae24:nginx
     restart: always
     container_name: 'nginx_sae24'
     ports:
